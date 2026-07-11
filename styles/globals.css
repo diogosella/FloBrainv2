@@ -1,0 +1,27 @@
+/* ============================================================
+   FLOBRAIN V2 — Global entry stylesheet
+   Imports design tokens + component styles (ported verbatim from
+   the original standalone build), then layers font wiring on top.
+   ============================================================ */
+@import "./tokens.css";
+@import "./components.css";
+
+/* Wire next/font families into the original --font / --mono tokens.
+   The variables (--font-jakarta / --font-jetbrains) are attached to
+   <body> by next/font in app/layout.tsx. */
+:root {
+  --font: var(--font-inter), "Inter", system-ui, sans-serif;
+  --mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* The original page rendered inside a bundler wrapper that centered the
+   body; the real app fills the viewport instead. */
+body {
+  display: block;
+  min-height: 100vh;
+}
+
+/* Root app node fills the viewport height. */
+#app {
+  height: 100vh;
+}
